@@ -304,9 +304,9 @@ function replaceNumbers(input) {
     return output.join('');
 }
 
-jQuery(document).ready(function() {
-    jQuery("#facebook").load("login/facebook");
-    jQuery("#google").load("login/google");
+$(document).ready(function() {
+    $("#google_login").load('login/google/');
+    $("#facebook_login").load('login/facebook/');
 });
 
 
