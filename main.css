@@ -1,0 +1,523 @@
+.main_footer_mobile {
+    display: block;
+}
+
+.mobile-bottom-nav {
+    display: -webkit-box;
+    display: flex;
+    height: 60px;
+    box-shadow: 0 -2px 5px -3px #333;
+    background-color: #fff;
+    width: 100%;
+}
+
+.mobile-bottom-nav__item {
+    -webkit-box-flex: 1;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 12px;
+    display: -webkit-box;
+    display: flex;
+    cursor: pointer;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.main_footer_mobile,
+.navbar_mobile_class_row {
+    display: block;
+}
+
+.mobile-bottom-nav__item--active {
+    font-weight: 600;
+}
+
+.mobile-bottom-nav__item-content {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+}
+
+.full_navbar_body {
+    background-color: transparent !important;
+    color: #fff !important;
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    height: 40px;
+}
+
+.mobile-bottom-nav__item-content .cart_count {
+    position: absolute;
+    top: 7px;
+    right: 33%;
+    width: 19px;
+    height: 19px;
+    border-radius: 30px;
+    justify-content: center;
+    font-weight: 600;
+    align-items: center;
+    display: flex;
+}
+
+.mobile-bottom-nav__item-content .notification_count {
+    position: absolute;
+    top: 7px;
+    font-weight: 600;
+    right: 8%;
+    width: 19px;
+    height: 19px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-bottom-nav__item .icon.mdi::before {
+    font-size: 24px;
+}
+
+.mobile-bottom-nav__item:hover {
+    background: #f0f2f5;
+    width: 80px;
+    margin: 0 auto;
+}
+
+.mobile-bottom-nav__item {
+    width: 80px;
+    margin: 0 auto;
+}
+
+.main_footer_mobile.navbar {
+    padding: 0;
+    z-index: 9999;
+}
+
+input,
+select,
+.btn {
+    border-radius: 0!important;
+}
+
+table {
+    border: 0;
+    font-size: 16px;
+}
+
+table caption {
+    font-size: 1.3em;
+}
+
+table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+table td {
+    padding: 8px;
+    border: none;
+}
+
+table tr {
+    display: block;
+    margin: 10px 0px;
+    border-bottom: 4px solid #130677;
+    clear: both;
+}
+
+td {
+    border: 0!important;
+}
+
+table td {
+    border-bottom: 1px solid #ddd!important;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+}
+
+table td::before {
+    /*
+* aria-label has no advantage, it won't be read inside a table
+content: attr(aria-label);
+*/
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+table td:last-child {
+    border-bottom: 0;
+}
+
+tbody,
+table,
+th {
+    border: 0!important;
+}
+
+.container {
+    margin-bottom: 100px;
+}
+
+.card,
+.card-body,
+.alert {
+    border-radius: 0!important;
+}
+
+.mobile_nav_wrapper {
+    position: fixed;
+    top: 0;
+    border-radius: 0;
+    height: 100%;
+    background: white;
+    z-index: 4040;
+    width: 100%;
+    transform: inherit;
+    left: 0;
+}
+
+.mobile_nav_wrapper .mdi::before,
+.mobile_nav_wrapper_search .mdi::before {
+    font-size: 22px;
+}
+
+.mobile_nav_head {
+    padding: 15px;
+}
+
+.mobile_nav_head {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+
+.mobile_nav_title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.mobile_nav_close .mdi {
+    cursor: pointer;
+}
+
+.mobile_nav_body {
+    overflow: auto;
+    height: 99%;
+    padding: 10px 15px 15px 15px;
+}
+
+.item_view_nav:last-child {
+    margin-bottom: 200px!important;
+}
+
+.item_view_nav:hover {
+    background: rgb(240, 240, 240);
+    border-radius: 0;
+}
+
+.item_view_nav {
+    align-items: center;
+    display: flex;
+    margin: 0;
+    padding: 5px 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.mobile_nav_content_icon_last .mdi::before,
+.middle_text_hints {
+    color: rgb(139, 139, 139);
+}
+
+.mobile_nav_content_middle {
+    margin-left: 15px;
+}
+
+.middle_text_hints {
+    font-size: 13px;
+}
+
+.exam_attend {
+    margin-bottom: 200px!important;
+}
+
+.card-text.tag {
+    white-space: nowrap;
+    overflow: auto;
+    margin-top: 15px;
+}
+
+.correct_ans td {
+    border-bottom: 0;
+    display: flex;
+    font-size: 1em;
+    text-align: center;
+    width: 100%!important;
+}
+
+.correct_ans tr {
+    display: flex;
+    margin: 10px 0px;
+    border-bottom: 4px solid #130677;
+    clear: both;
+}
+
+.input-group-text {
+    border-radius: 0!important;
+}
+
+
+/* Google signin button */
+
+.google-btn {
+    width: 200px;
+    height: 40px;
+    background-color: #4285f4;
+    border-radius: 4px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .25);
+    margin: 12px auto;
+}
+
+.google-icon-wrapper {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 3px 0px 0px 3px;
+    background-color: #fff;
+}
+
+.google-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    width: 25px;
+    height: 25px;
+}
+
+.btn-text {
+    color: #fff;
+    font-size: 14px;
+    margin: 10px 11px 11px 11px;
+    text-align: center;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+
+/* Google signin button */
+
+
+/* Facebook signin button */
+
+.facebook-btn {
+    width: 200px;
+    height: 40px;
+    background-color: #395a9a;
+    border-radius: 4px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .25);
+    margin: 12px auto;
+}
+
+.facebook-icon-wrapper {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-right: 1px solid #305298;
+}
+
+.facebook-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    width: 25px;
+    height: 25px;
+}
+
+
+/* Facebook signin button */
+
+#profile_photo .mobile_nav_content_middle {
+    margin: 0;
+}
+
+#profile_photo .mobile_nav_content_middle {
+    padding: 15px 0px !important;
+    margin: 0;
+    width: 80px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#profile_photo:hover {
+    background: transparent;
+}
+
+#profile_photo #pro_img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+#profile_photo {
+    display: flex!important;
+    justify-content: center!important;
+    align-items: center!important;
+}
+
+#passChangeModal,
+#imgChangeModal,
+#nameChangeModal,
+#emailChangeModal {
+    z-index: 4606;
+}
+
+.modal-content,
+.modal,
+.modal.show .modal-dialog {
+    border-radius: 0!important;
+    border: 0!important;
+    margin: 0!important;
+}
+
+#toast-container>.toast-warning,
+#toast-container>.toast-info,
+#toast-container>.toast-error,
+#toast-container>.toast-success {
+    background-size: 16px;
+}
+
+#toast-container {
+    bottom: 70px;
+    width: 95%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.toast-message {
+    font-size: 13px;
+}
+
+.toast {
+    max-width: 100%;
+}
+
+.toast-message {
+    font-size: 14px;
+}
+
+.toast-error {
+    background-color: #c82333!important;
+}
+
+.toast-success {
+    background-color: #218838!important;
+}
+
+#toast-container>div:hover {
+    -moz-box-shadow: none!important;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    opacity: 0.7;
+}
+
+#toast-container>div {
+    width: 95%;
+    border-radius: 7px;
+    border: 0;
+    margin: 0;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    opacity: 1!important;
+}
+
+html,
+body {
+    margin: 20px auto;
+    font-family: 'SolaimanLipi', sans-serif!important;
+}
+
+.home_card {
+    margin-bottom: 15px;
+    padding: 0!important;
+}
+
+.home_card_card {
+    margin-left: 7px;
+    margin-right: 7px;
+}
+
+#view_question_form {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.home_card_row {
+    margin: 0!important;
+    padding-top: 10px;
+}
+
+.login_title {
+    font-family: 'Hind Siliguri', sans-serif!important;
+    font-size: 30px;
+}
+
+@media only screen and (min-width: 860px) {
+    html {
+        width: 40%;
+        height: 100%;
+        margin: 0px auto;
+        background: rgb(255, 255, 255);
+    }
+    .container {
+        padding: 0!important;
+        background: #fff;
+    }
+    .container,
+    .main_footer_mobile.navbar {
+        width: 40%;
+        margin: 0 auto;
+        background: #fff;
+    }
+    .mobile_nav_wrapper {
+        width: 40%;
+        left: inherit;
+        background: #fff;
+    }
+    .modal {
+        left: inherit;
+        padding: 0!important;
+    }
+    .modal-dialog {
+        margin: 0 auto!important;
+        max-width: 40%!important;
+    }
+    .modal.show .modal-dialog {
+        margin: 0 auto!important;
+    }
+}
