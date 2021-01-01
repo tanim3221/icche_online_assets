@@ -8,7 +8,11 @@ $(function() {
         var generateexam = 'generateexam';
         console.log('Click for download questions');
         if (exam_name !== '' && exam_sub !== '' && exam_time !== '' && exam_question !== '') {
-            location.href = "question_print.php?exam_name=" + exam_name + "&question=" + exam_question + "&exam_time=" + exam_time + "&subject=" + exam_sub + "&generateexam";
+            if (exam_question > 200) {
+                toastr.error('একসাথে সর্বোচ্চ ২০০ প্রশ্ন প্রিন্ট করা যাবে।');
+            } else {
+                location.href = "question_print.php?exam_name=" + exam_name + "&question=" + exam_question + "&exam_time=" + exam_time + "&subject=" + exam_sub + "&generateexam";
+            }
         }
 
     });
