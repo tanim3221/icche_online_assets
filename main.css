@@ -281,6 +281,17 @@ th {
     border-radius: 0!important;
 }
 
+#facebook_login,
+#google_login {
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px 0;
+}
+
 
 /* Google signin button */
 
