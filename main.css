@@ -371,16 +371,13 @@ th {
 /* Facebook signin button */
 
 #profile_photo .mobile_nav_content_middle {
-    margin: 0;
-}
-
-#profile_photo .mobile_nav_content_middle {
     padding: 15px 0px !important;
     margin: 0;
     width: 80px;
     border-radius: 50%;
     border: 1px solid #ddd;
     height: 80px;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;

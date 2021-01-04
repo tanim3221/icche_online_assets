@@ -90,7 +90,8 @@ $(function() {
         var title = 'পরীক্ষা শুরু হয়েছে [' + subject + ']';
         $('.top_title_all').toggleClass('attend');
         getExam(url, title, exam_time);
-        $('.mobile_nav_close').hide();
+        $('.mobile_nav_close').show();
+        $('.mobile_nav_close').attr('id', 'cancel_exam');
         $('.main_footer_mobile.navbar').hide();
     });
     $(document).on('click', '#old_exam', function(e) {
@@ -161,6 +162,12 @@ $(function() {
         getAppBoard();
         $('.mobile_nav_wrapper').show();
     });
+
+    $(document).on('click', '#notify', function(e) {
+        e.preventDefault();
+        getAppNotice();
+        $('.mobile_nav_wrapper').show();
+    });
     $(document).on('click', '#close_window_list', function(e) {
         e.preventDefault();
         location.reload();
@@ -184,7 +191,7 @@ $(function() {
 });
 
 function getExamList() {
-    var spinner = '<div class="text-center spinner_exam"><span class="text-center spinner-border text-success"></span></div>';
+    var spinner = getSpinner();
     $('.mobile_nav_body').html(spinner);
     $.ajax({
         type: 'GET',
@@ -199,7 +206,7 @@ function getExamList() {
 
 
 function getExamForm() {
-    var spinner = '<div class="text-center spinner_exam"><span class="text-center spinner-border text-success"></span></div>';
+    var spinner = getSpinner();
     $('.mobile_nav_body').html(spinner);
     $.ajax({
         type: 'GET',
@@ -213,7 +220,7 @@ function getExamForm() {
 }
 
 function getMyPro() {
-    var spinner = '<div class="text-center spinner_exam"><span class="text-center spinner-border text-success"></span></div>';
+    var spinner = getSpinner();
     $('.mobile_nav_body').html(spinner);
     $.ajax({
         type: 'GET',
@@ -227,7 +234,7 @@ function getMyPro() {
 }
 
 function getAppBoard() {
-    var spinner = '<div class="text-center spinner_exam"><span class="text-center spinner-border text-success"></span></div>';
+    var spinner = getSpinner();
     $('.mobile_nav_body').html(spinner);
     $.ajax({
         type: 'GET',
@@ -240,8 +247,22 @@ function getAppBoard() {
     });
 }
 
+function getAppNotice() {
+    var spinner = getSpinner();
+    $('.mobile_nav_body').html(spinner);
+    $.ajax({
+        type: 'GET',
+        url: 'exam-system.php?notice',
+        dataType: 'html',
+        success: function(response) {
+            $('.mobile_nav_body').html(response);
+            $('.mobile_nav_title').html('অ্যাপ বার্তা');
+        }
+    });
+}
+
 function getExam(url, title, exam_time) {
-    var spinner = '<div class="text-center spinner_exam"><span class="text-center spinner-border text-success"></span></div>';
+    var spinner = getSpinner();
     $('.mobile_nav_body').html(spinner);
     $.ajax({
         type: 'GET',
@@ -314,11 +335,26 @@ $(document).ready(function() {
 });
 
 
+function getSpinnersm() {
+    var spinner = '<span class="text-center spinner-border-sm spinner-border text-white"></span>';
+    return spinner;
+}
+
+
+function getSpinner() {
+    var spinner = '<div class="text-center spinner_exam"><span class="text-center spinner-border text-success"></span></div>';
+    return spinner;
+}
+
+
 $(document).on('click', '#saveImgdata', function(e) {
     e.preventDefault();
     // var files = $('#profile_photo').prop('files')[0];
     // var photo = new FormData();
     // photo.append('file', files);
+    var spinner = getSpinnersm();
+    $('#saveImgdata').html(spinner);
+    $('#saveImgdata').attr('disabled', 'disabled');
     var photo = new FormData($("#imgDataForm")[0]);
     console.log('Click to upload photo.')
     $.ajax({
@@ -349,6 +385,9 @@ $(document).on('click', '#saveImgdata', function(e) {
 $(document).on('click', '#savePassdata', function(e) {
     e.preventDefault();
     console.log('Click to update password.')
+    var spinner = getSpinnersm();
+    $('#savePassdata').html(spinner);
+    $('#savePassdata').attr('disabled', 'disabled');
     var password = $('#passDataForm').serialize();
     console.log(password);
     $.ajax({
@@ -377,6 +416,9 @@ $(document).on('click', '#savePassdata', function(e) {
 $(document).on('click', '#saveNamedata', function(e) {
     e.preventDefault();
     console.log('Click to update Name.')
+    var spinner = getSpinnersm();
+    $('#saveNamedata').html(spinner);
+    $('#saveNamedata').attr('disabled', 'disabled');
     var name = $('#nameDataForm').serialize();
     console.log(name);
     $.ajax({
@@ -404,6 +446,9 @@ $(document).on('click', '#saveNamedata', function(e) {
 $(document).on('click', '#saveEmaildata', function(e) {
     e.preventDefault();
     console.log('Click to update Email.')
+    var spinner = getSpinnersm();
+    $('#saveEmaildata').html(spinner);
+    $('#saveEmaildata').attr('disabled', 'disabled');
     var email = $('#emailDataForm').serialize();
     console.log(name);
     $.ajax({
