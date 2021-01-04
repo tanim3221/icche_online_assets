@@ -342,7 +342,7 @@ function getSpinnersm() {
 
 
 function getSpinner() {
-    var spinner = '<div class="text-center spinner_exam"><span class="text-center spinner-border text-success"></span></div>';
+    var spinner = '<div class="text-center spinner_exam"><span style="color:#519ad6" class="text-center spinner-border"></span></div>';
     return spinner;
 }
 
