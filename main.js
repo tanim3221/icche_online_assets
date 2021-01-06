@@ -49,7 +49,7 @@ $(function() {
         var session_id = $(this).data('session_id');
         var session_key = $(this).data('session_key');
         var url = 'exam-system.php?exam_result&view_ans&session_id=' + session_id + '&session_key=' + session_key;
-        var title = 'আপনার পরীক্ষার ফলাফল';
+        var title = 'আমার পরীক্ষার ফলাফল';
         console.log('Click for Submit Ans');
         $.ajax({
             type: 'POST',
@@ -182,7 +182,7 @@ $(function() {
         var session_key = $(this).data('session_key');
         var subject = $(this).data('subject');
         var url = 'exam-system.php?exam_result&view_ans&session_id=' + session_id + '&session_key=' + session_key;
-        var title = 'আপনার পরীক্ষার ফলাফল [' + subject + ']';
+        var title = 'আমার পরীক্ষার ফলাফল [' + subject + ']';
         var close = '<i id="close_window_result" class="fas fa-times"></i>'
         getExam(url, title, close);
         $('.timer_exam').hide();
@@ -199,7 +199,7 @@ function getExamList() {
         dataType: 'html',
         success: function(response) {
             $('.mobile_nav_body').html(response);
-            $('.mobile_nav_title').html('আপনার পরীক্ষার তালিকা');
+            $('.mobile_nav_title').html('আমার পরীক্ষার তালিকা');
         }
     });
 }
@@ -368,6 +368,8 @@ $(document).on('click', '#saveImgdata', function(e) {
             if (response.error) {
                 console.log(response.message);
                 toastr.error(response.message);
+                $('#saveImgdata').removeAttr('disabled', 'disabled');
+                $('#saveImgdata').html('সংরক্ষন করুন');
             } else {
                 console.log(response.message);
                 console.log('Successfully uploaded photo.');
@@ -399,6 +401,8 @@ $(document).on('click', '#savePassdata', function(e) {
             if (response.error) {
                 console.log(response.message);
                 toastr.error(response.message);
+                $('#savePassdata').removeAttr('disabled', 'disabled');
+                $('#savePassdata').html('সংরক্ষন করুন');
             } else {
                 console.log(response.message);
                 console.log('Successfully updated password.');
@@ -430,6 +434,8 @@ $(document).on('click', '#saveNamedata', function(e) {
             if (response.error) {
                 console.log(response.message);
                 toastr.error(response.message);
+                $('#saveNamedata').removeAttr('disabled', 'disabled');
+                $('#saveNamedata').html('সংরক্ষন করুন');
             } else {
                 console.log(response.message);
                 console.log('Successfully updated name.');
@@ -460,6 +466,8 @@ $(document).on('click', '#saveEmaildata', function(e) {
             if (response.error) {
                 console.log(response.message);
                 toastr.error(response.message);
+                $('#saveEmaildata').removeAttr('disabled', 'disabled');
+                $('#saveEmaildata').html('সংরক্ষন করুন');
             } else {
                 console.log(response.message);
                 toastr.success(response.message);
@@ -473,3 +481,13 @@ $(document).on('click', '#saveEmaildata', function(e) {
         }
     });
 });
+
+// img laod when upload
+var loadImg = function(event) {
+    var reader = new FileReader();
+    reader.onload = function() {
+        var output = document.getElementById('img_showing');
+        output.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+};
