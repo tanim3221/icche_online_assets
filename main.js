@@ -136,6 +136,8 @@ $(function() {
 
     $(document).on('click', '#clickImgData', function(e) {
         e.preventDefault();
+        var img = $(this).data('img');
+        $('#img_showing').attr('src', img);
         $('#imgChangeModal').modal({
             show: true
         });
