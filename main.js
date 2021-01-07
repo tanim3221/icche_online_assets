@@ -170,6 +170,7 @@ $(function() {
         getAppNotice();
         $('.mobile_nav_wrapper').show();
     });
+
     $(document).on('click', '#close_window_list', function(e) {
         e.preventDefault();
         location.reload();
@@ -202,6 +203,43 @@ function getExamList() {
         success: function(response) {
             $('.mobile_nav_body').html(response);
             $('.mobile_nav_title').html('আমার পরীক্ষার তালিকা');
+        }
+    });
+}
+
+
+$(document).on('click', '#resend_code', function(e) {
+    e.preventDefault();
+    console.log('Resend Button Clicked.')
+    var spinner = getSpinnersm();
+    $('#resend_code').html(spinner);
+    $('#resend_code').attr('disabled', 'disabled');
+    var resend_code = 'resend_code';
+    resendCode(resend_code);
+});
+
+function resendCode(resend_code) {
+    $.ajax({
+        type: 'POST',
+        url: 'logged-user.php',
+        data: { resend_code: resend_code },
+        dataType: 'json',
+        success: function(response) {
+            if (response.error) {
+                console.log(response.message);
+                toastr.error(response.message);
+                $('#resend_code').removeAttr('disabled', 'disabled');
+                $('#resend_code').html('আবার চেষ্টা করুন');
+            } else {
+                console.log(response.message);
+                console.log('Successfully Resend Verification Code.');
+                setTimeout(function() {
+                    location.reload();
+                }, 2000);
+                $('#resend_code').html('অভিনন্দন');
+                toastr.success(response.message);
+            }
+
         }
     });
 }
