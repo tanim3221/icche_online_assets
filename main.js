@@ -541,3 +541,59 @@ var loadImg = function(event) {
     };
     reader.readAsDataURL(event.target.files[0]);
 };
+
+
+
+$(document).on('click', '#total_questions', function(e) {
+    e.preventDefault();
+    console.log('Click for total questions');
+    var count = $(this).data('count');
+    var url = 'total_questions';
+    var title = 'অংশগ্রহণকৃত সকল প্রশ্ন (' + count + 'টি প্রশ্ন)';
+    getIndView(url, title);
+});
+
+
+$(document).on('click', '#total_wrong_ans', function(e) {
+    e.preventDefault();
+    console.log('Click for total wrong questions');
+    var count = $(this).data('count');
+    var url = 'wrong_answered';
+    var title = 'সকল ভুল উত্তর (' + count + 'টি প্রশ্ন)';
+    getIndView(url, title);
+});
+
+
+$(document).on('click', '#total_correct_ans', function(e) {
+    e.preventDefault();
+    console.log('Click for total correct questions');
+    var count = $(this).data('count');
+    var url = 'correct_answered';
+    var title = 'সকল সঠিক উত্তর (' + count + 'টি প্রশ্ন)';
+    getIndView(url, title);
+});
+
+
+$(document).on('click', '#total_no_ans', function(e) {
+    e.preventDefault();
+    console.log('Click for total no ans questions');
+    var count = $(this).data('count');
+    var url = 'not_answered';
+    var title = 'সকল উত্তরবিহীন প্রশ্ন (' + count + 'টি প্রশ্ন)';
+    getIndView(url, title);
+});
+
+function getIndView(url, title) {
+    $('.mobile_nav_wrapper').show();
+    var spinner = getSpinner();
+    $('.mobile_nav_body').html(spinner);
+    $.ajax({
+        type: 'GET',
+        url: 'exam-system.php?ind_questions_view&' + url,
+        dataType: 'html',
+        success: function(response) {
+            $('.mobile_nav_body').html(response);
+            $('.mobile_nav_title').html(title);
+        }
+    });
+}
