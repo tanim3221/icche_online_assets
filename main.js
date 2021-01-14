@@ -17,6 +17,15 @@ $(function() {
 
     });
 
+    $(document).on('click', '#result_exam_dnld', function(e) {
+        e.preventDefault();
+        var session_id = $(this).data('session_id');
+        var session_key = $(this).data('session_key');
+        var ansexam = 'ansexam';
+        console.log('Click for download answered question');
+        location.href = "question_print.php?session_id=" + session_id + "&session_key=" + session_key + "&ansexam";
+    });
+
     // $('#generate_questions').submit(function(e) {
     $(document).on('click', '#generate_exam', function(e) {
         e.preventDefault();
@@ -233,6 +242,7 @@ function resendCode(resend_code) {
             } else {
                 console.log(response.message);
                 console.log('Successfully Resend Verification Code.');
+                // $('#resend_code').removeAttr('disabled', 'disabled');
                 setTimeout(function() {
                     location.reload();
                 }, 2000);
